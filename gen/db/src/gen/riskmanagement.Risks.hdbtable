@@ -1,0 +1,18 @@
+COLUMN TABLE riskmanagement_Risks (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  title NVARCHAR(100),
+  owner NVARCHAR(5000),
+  prio_code NVARCHAR(5000),
+  descr NVARCHAR(5000),
+  miti_ID NVARCHAR(36),
+  impact INTEGER,
+  bp_BusinessPartner NVARCHAR(10),
+  PRIMARY KEY(ID)
+) WITH ASSOCIATIONS (
+  MANY TO ONE JOIN riskmanagement_Priority AS prio ON (prio.code = prio_code),
+  MANY TO ONE JOIN riskmanagement_Mitigations AS miti ON (miti.ID = miti_ID)
+)

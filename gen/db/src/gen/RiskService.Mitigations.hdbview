@@ -1,0 +1,13 @@
+VIEW RiskService_Mitigations AS SELECT
+  Mitigations_0.ID,
+  Mitigations_0.createdAt,
+  Mitigations_0.createdBy,
+  Mitigations_0.modifiedAt,
+  Mitigations_0.modifiedBy,
+  Mitigations_0.descr,
+  Mitigations_0.owner,
+  Mitigations_0."TIMELINE"
+FROM riskmanagement_Mitigations AS Mitigations_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN RiskService_Risks AS risks ON (risks.miti_ID = ID)
+)

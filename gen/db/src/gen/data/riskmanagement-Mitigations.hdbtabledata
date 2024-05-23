@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "RISKMANAGEMENT_MITIGATIONS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "riskmanagement-Mitigations.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "CREATEDAT",
+          "CREATEDBY",
+          "DESCR",
+          "OWNER",
+          "TIMELINE"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "CREATEDAT": "createdAt",
+        "CREATEDBY": "createdBy",
+        "DESCR": "descr",
+        "OWNER": "owner",
+        "TIMELINE": "timeline"
+      }
+    }
+  ]
+}

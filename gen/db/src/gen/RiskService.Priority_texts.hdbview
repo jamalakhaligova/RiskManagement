@@ -1,0 +1,6 @@
+VIEW RiskService_Priority_texts AS SELECT
+  texts_0.locale,
+  texts_0.name,
+  texts_0.descr,
+  texts_0.code
+FROM riskmanagement_Priority_texts AS texts_0

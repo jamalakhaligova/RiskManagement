@@ -1,0 +1,18 @@
+VIEW localized_RiskService_Risks AS SELECT
+  Risks_0.ID,
+  Risks_0.createdAt,
+  Risks_0.createdBy,
+  Risks_0.modifiedAt,
+  Risks_0.modifiedBy,
+  Risks_0.title,
+  Risks_0.owner,
+  Risks_0.prio_code,
+  Risks_0.descr,
+  Risks_0.miti_ID,
+  Risks_0.impact,
+  Risks_0.bp_BusinessPartner
+FROM localized_riskmanagement_Risks AS Risks_0
+WITH ASSOCIATIONS (
+  MANY TO ONE JOIN localized_RiskService_Priority AS prio ON (prio.code = prio_code),
+  MANY TO ONE JOIN localized_RiskService_Mitigations AS miti ON (miti.ID = miti_ID)
+)

@@ -1,0 +1,13 @@
+VIEW localized_riskmanagement_Mitigations AS SELECT
+  L.ID,
+  L.createdAt,
+  L.createdBy,
+  L.modifiedAt,
+  L.modifiedBy,
+  L.descr,
+  L.owner,
+  L."TIMELINE"
+FROM riskmanagement_Mitigations AS L
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN localized_riskmanagement_Risks AS risks ON (risks.miti_ID = ID)
+)

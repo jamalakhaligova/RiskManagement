@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "RISKMANAGEMENT_RISKS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "riskmanagement-Risks.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "CREATEDAT",
+          "CREATEDBY",
+          "TITLE",
+          "OWNER",
+          "PRIO_CODE",
+          "DESCR",
+          "MITI_ID",
+          "IMPACT",
+          "BP_BUSINESSPARTNER"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "CREATEDAT": "createdAt",
+        "CREATEDBY": "createdBy",
+        "TITLE": "title",
+        "OWNER": "owner",
+        "PRIO_CODE": "prio_code",
+        "DESCR": "descr",
+        "MITI_ID": "miti_ID",
+        "IMPACT": "impact",
+        "BP_BUSINESSPARTNER": "bp_BusinessPartner"
+      }
+    }
+  ]
+}
